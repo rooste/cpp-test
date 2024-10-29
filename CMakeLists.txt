@@ -7,9 +7,16 @@ include(CTest)
 enable_testing()
 
 # Specify the C++ standard
-set(CMAKE_CXX_STANDARD 11)
+set(CMAKE_CXX_STANDARD 20)
 set(CMAKE_CXX_STANDARD_REQUIRED True)
 
 # Add the executable
 add_executable(CppTest src/MyCpp.cpp)
 set_property(TARGET CppTest PROPERTY CXX_STANDARD 20)
+
+
+# Add the test executable
+add_executable(TestMyCpp test/MyTest.cpp)
+
+# Register the test with CTest
+add_test(NAME MyCppTest COMMAND TestMyCpp)
