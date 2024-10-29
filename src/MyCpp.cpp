@@ -1,13 +1,16 @@
 #include <iostream>
-#include <vector>
-#include <algorithm>
-#include <cmath>
+#include <CLI/CLI.hpp>
 
-using namespace std;
-
-int main() 
+int main(int argc, char** argv) 
 {
-    cout << "Hello, Worldy!" << endl;
+    CLI::App app{"MyCppProject"};
+
+    std::string name = "World";
+    app.add_option("-n,--name", name, "Name to greet");
+
+    CLI11_PARSE(app, argc, argv);
+
+    std::cout << "Hello, " << name << "!" << std::endl;
 
     return 0;
 }

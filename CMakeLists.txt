@@ -10,8 +10,21 @@ enable_testing()
 set(CMAKE_CXX_STANDARD 20)
 set(CMAKE_CXX_STANDARD_REQUIRED True)
 
+# FetchContent module
+include(FetchContent)
+
+# Fetch CLI11 from GitHub
+FetchContent_Declare(
+  CLI11
+  GIT_REPOSITORY https://github.com/CLIUtils/CLI11.git
+  GIT_TAG v2.1.2 # You can specify the version you want to use
+)
+FetchContent_MakeAvailable(CLI11)
+
+
 # Add the executable
 add_executable(CppTest src/MyCpp.cpp)
+target_link_libraries(CppTest PRIVATE CLI11::CLI11)
 set_property(TARGET CppTest PROPERTY CXX_STANDARD 20)
 
 
