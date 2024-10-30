@@ -23,9 +23,10 @@ FetchContent_MakeAvailable(CLI11)
 
 
 # Add the executable
-add_executable(CppTest src/MyCpp.cpp)
+add_executable(CppTest src/MyCpp.cpp src/MyMod.cppm)
 target_link_libraries(CppTest PRIVATE CLI11::CLI11)
 set_property(TARGET CppTest PROPERTY CXX_STANDARD 20)
+target_compile_options(CppTest PRIVATE -fmodules -fcxx-modules)
 
 
 # Add the test executable

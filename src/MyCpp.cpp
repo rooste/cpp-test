@@ -1,3 +1,5 @@
+import MyMod;
+
 #include <iostream>
 #include <CLI/CLI.hpp>
 
@@ -10,7 +12,7 @@ int main(int argc, char** argv)
 
     CLI11_PARSE(app, argc, argv);
 
-    std::cout << "Hello, " << name << "!" << std::endl;
+    std::cout << "Hello, " << name << " with " << __cplusplus << std::endl;
 
     return 0;
 }
