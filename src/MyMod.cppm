@@ -1,7 +1,11 @@
-export module MyMod;
-
+module;
 #include <string>
 
-export int getStringLength(const std::string& str) {
-    return str.length();
+
+export module MyMod;
+
+
+int32_t calculateLength(const std::string& name)
+{
+    return name.length();
 }

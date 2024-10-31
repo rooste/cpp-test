@@ -5,15 +5,14 @@
             "name": "default",
             "hidden": false,
             "description": "Default configuration",
-            "generator": "Unix Makefiles",
+            "generator": "Ninja",
             "binaryDir": "${sourceDir}/build",
             "cacheVariables": {
                 "CMAKE_BUILD_TYPE": "Debug",
-                "CMAKE_EXPORT_COMPILE_COMMANDS": "YES",
-                "CMAKE_C_COMPILER": "/usr/bin/clang",
-                "CMAKE_CXX_COMPILER": "/usr/bin/clang++"
+                "CMAKE_CXX_EXTENSIONS": "NO"
             }
         }
     ]
 
 }
+
